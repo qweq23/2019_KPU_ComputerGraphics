@@ -1,0 +1,14 @@
+#version 330 core
+
+in vec3 vPos;
+out vec3 passColor;
+
+uniform mat4 translate;
+uniform mat4 rotate;
+uniform mat4 rotatey;
+
+void main()
+{
+	gl_Position = translate * rotate * vec4 (vPos, 1.0);
+	passColor = vec3 (0.0f, 1.0f, 0.0f);
+}
